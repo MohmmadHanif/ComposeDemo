@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".cryptocurrencydemo.app.App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -15,10 +16,10 @@
         android:theme="@style/Theme.ComposeDemo"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:exported="false"
+            android:name=".main.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/Theme.ComposeDemo">
+            android:theme="@style/Theme.ComposeDemo"
+            android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -66,7 +67,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".AddDataInDataBaseActivity"
+            android:name=".main.AddDataInDataBaseActivity"
             android:exported="false"
             android:label="@string/title_activity_add_data_in_data_base"
             android:theme="@style/Theme.ComposeDemo">
@@ -83,6 +84,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity android:name="com.example.composedemo.cryptocurrencydemo.presentation.CryptoMainActivity" />
     </application>
 
 </manifest>

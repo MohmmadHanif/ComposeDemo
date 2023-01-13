@@ -15,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.composedemo.RecyclerViewComposeActivity
 import com.example.composedemo.bottomnavigation.BottomNavigationActivity
+import com.example.composedemo.cryptocurrencydemo.presentation.CryptoMainActivity
 import com.example.composedemo.layoutCodeLabActivity
 import com.example.composedemo.main.ui.theme.ComposeDemoTheme
 import com.example.composedemo.navigation.NavigationMainActivity
@@ -135,6 +136,25 @@ fun Greeting() {
                 .align(Alignment.CenterHorizontally)
         ) {
             Text(text = "Bottom Navigation")
+        }
+
+
+        //Bottom Navigation
+
+        ElevatedButton(
+            onClick = {
+                context.startActivity(
+                    Intent(
+                        context,
+                        CryptoMainActivity::class.java
+                    )
+                )
+            },
+            modifier = Modifier
+                .padding(40.dp, 20.dp)
+                .align(Alignment.CenterHorizontally)
+        ) {
+            Text(text = "Crypto")
         }
     }
 }
