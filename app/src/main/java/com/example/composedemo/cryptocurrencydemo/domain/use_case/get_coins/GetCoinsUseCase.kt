@@ -20,7 +20,11 @@ class GetCoinsUseCase @Inject constructor(private val repository: CoinRepository
         } catch (e: HttpException) {
             emit(Resource.ERROR(e.localizedMessage ?: "An unexpected Error Occur"))
         } catch (e: IOException) {
-            emit(Resource.ERROR(e.localizedMessage ?: "Can't Reach Server. Please Check Your Internet."))
+            emit(
+                Resource.ERROR(
+                    e.localizedMessage ?: "Can't Reach Server. Please Check Your Internet."
+                )
+            )
         }
     }
 }

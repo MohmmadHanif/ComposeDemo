@@ -4,11 +4,13 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.composedemo.cryptocurrencydemo.common.Constant
 import com.example.composedemo.cryptocurrencydemo.common.Resource
 import com.example.composedemo.cryptocurrencydemo.domain.model.CoinDetail
 import com.example.composedemo.cryptocurrencydemo.domain.use_case.get_single_coin.GetCoinUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
@@ -38,7 +40,7 @@ class CoinDetailViewModel @Inject constructor(
                 is Resource.SUCCESS -> _state.value = CoinListState(coin = it.data)
 
             }
-        }
+        }.launchIn(viewModelScope)
     }
 }
 

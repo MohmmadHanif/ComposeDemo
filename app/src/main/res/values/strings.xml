@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Compose Demo</string>
     <string name="title_activity_recycler_view">RecyclerView</string>
+    <string name="title_activity_crypto">Crypto Main Activity</string>
     <string name="title_activity_add_data_in_data_base">AddDataInDataBaseActivity</string>
     <string name="title_activity_layout_code_lab">layoutCodeLabActivity</string>
 

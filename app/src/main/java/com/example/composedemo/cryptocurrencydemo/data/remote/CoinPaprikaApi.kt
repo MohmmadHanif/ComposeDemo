@@ -3,16 +3,16 @@ package com.example.composedemo.cryptocurrencydemo.data.remote
 import com.example.composedemo.cryptocurrencydemo.data.remote.dto.CoinDetailDto
 import com.example.composedemo.cryptocurrencydemo.data.remote.dto.CoinsDto
 import retrofit2.http.GET
-import retrofit2.http.Part
+import retrofit2.http.Path
 
 interface CoinPaprikaApi {
 
-    @GET("/coins")
+    @GET("coins")
     suspend fun getCoins(): List<CoinsDto>
 
-    @GET("/coins/{coinId}")
+    @GET("coins/{coinId}")
     suspend fun getCoinById(
-        @Part("coinId") coinId: String
+        @Path("coinId") coinId: String
     ): CoinDetailDto
 
 }

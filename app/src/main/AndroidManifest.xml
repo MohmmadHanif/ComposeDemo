@@ -84,7 +84,16 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity android:name="com.example.composedemo.cryptocurrencydemo.presentation.CryptoMainActivity" />
+
+        <activity
+            android:name=".cryptocurrencydemo.presentation.CryptoMainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_crypto"
+            android:theme="@style/Theme.ComposeDemo">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
     </application>
 
 </manifest>

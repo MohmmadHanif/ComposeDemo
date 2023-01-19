@@ -1,6 +1,5 @@
 package com.example.composedemo.cryptocurrencydemo.presentation.coin_list.components
 
-import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -27,7 +26,6 @@ fun CoinListScreen(navigation: NavController, viewModel: CoinListViewModel = hil
 
         LazyColumn(modifier = Modifier.fillMaxSize()) {
             items(state.coin) { coin ->
-                Log.e("TAG", "CoinListScreen: ${coin.name}")
                 CoinListItem(coin = coin, onItemClick = {
                     navigation.navigate(Screen.CoinDetailScreen.route + "/${coin.id}")
                 })
